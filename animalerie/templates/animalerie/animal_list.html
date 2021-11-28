@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+<head>
+    <title>Animalerie</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/animalerie.css' %}">
+</head>
+
+<body>
+    <div>
+        <h1><a id="titre" href="/">Animalerie</a></h1>
+    </div>
+    <div class="container_animal">
+    {% for animal in animals %}
+            <div class="box">
+                <img class="image_animal" src="{{animal.photo}}" style="width:300px;height:200px;">
+                <p>{{ animal.id_animal }} ; {{animal.lieu}} <a id="etat_de_l_animal">{{animal.etat}}</a></p>
+                <button> <a href="{% url 'animal_detail' id_animal=animal.id_animal %}"> plus de details </a></button>
+            </div>
+    {% endfor %}
+    </div>
+    <div class="container_equipement">
+    {% for equipement in equipements %}
+            <div class="box_equip" >
+                <img src="{{equipement.photo}}" style="width:300px;height:200px;">
+                <p>{{ equipement.id_equip }} <a id="">{{equipement.disponibilite}}</a></p>
+            </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

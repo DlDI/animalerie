@@ -1,0 +1,36 @@
+h1 a, h2 a {
+    color: #F25100;
+    font-family: 'Lobster';
+}
+.container_animal {
+    display:inline;
+    float: left;
+    position: relative;
+
+}
+
+.container_animal .box .image_animal{
+    display: flex;
+    justify-content: center;
+
+}
+.container_animal .box {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-color: gery;
+    align-items: center;
+    justify-content: center;
+
+}
+.container_equipement {
+    position: relative;
+    float: right;
+
+}
+.container_equipement .box_equip {
+    position: relative;
+    width: 400px;
+    height: 300px;
+
+}
